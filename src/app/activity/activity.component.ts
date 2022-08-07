@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
@@ -9,12 +9,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ActivityComponent implements OnInit {
 
-activities : any;
+  activities : any;
 
   constructor(private http : HttpClient) { }
 
   ngOnInit() {
-    let response = this.http.get("https://jsonplaceholder.typicode.com/posts");
+    let response = this.http.get("https://jsonplaceholder.typicode.com/todos");
     response.subscribe((data) => this.activities = data);
   }
 
