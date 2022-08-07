@@ -28,7 +28,13 @@
         <td>{{ activity.userId }}</td>
         <td>{{ activity.id }}</td>
         <td>{{ activity.title }}</td>
-        <td>{{ activity.completed }}</td>
+        <td>
+          <div [ngSwitch] = "activity.completed">
+              <span *ngSwitchCase="false">Not Completed</span>
+              <span *ngSwitchCase="true">Completed</span>
+              <span *ngSwitchDefault>N/A</span>
+          </div>
+        </td>
       </tr>
       
     </tbody>
